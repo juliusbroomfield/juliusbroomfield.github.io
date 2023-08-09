@@ -15,7 +15,7 @@ theme = 'barks'
 
 [[menu.main]]
     name = "CV"
-    url = "static/docs/Official_Resume.pdf"
+    url = "/docs/Official_Resume.pdf"
     weight = 1
 
 [params.social]
