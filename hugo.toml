@@ -1,0 +1,36 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'en-us'
+title = 'Julius Broomfield'
+theme = 'barks'
+
+[params.head]
+    author = "Julius Broomfield"
+    description = "Hi, I'm Julius, and this is my website!"
+
+[params.colors]
+    theme_color = "#333333"
+    background_color = "#fcfbf9"
+    text_color = "#333333"
+    link_color = "#9277B0"
+
+[[menu.main]]
+    name = "CV"
+    url = "/docs/resume.pdf"
+    weight = 1
+
+[params.social]
+    [params.social.email]
+        name = "E-Mail"
+        class = "fas fa-envelope"
+        url = "mailto:broomfieldjuliusr@gmail.com"
+        weight = 1
+    [params.social.github]
+        name = "GitHub"
+        class = "fab fa-github"
+        url = "https://github.com/juliusthecreator"
+        weight = 2
+    [params.social.linkedin]
+        name = "LinkedIn"
+        class = "fab fa-linkedin-in"
+        url = "https://www.linkedin.com/in/juliusbroomfield/"
+        weight = 3
