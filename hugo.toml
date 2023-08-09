@@ -2,6 +2,7 @@ baseURL = 'https://juliusthecreator.github.io/'
 languageCode = 'en-us'
 title = 'Julius Broomfield'
 theme = 'barks'
+favicon = 'static/favicon.ico'
 
 [params.head]
     author = "Julius Broomfield"
