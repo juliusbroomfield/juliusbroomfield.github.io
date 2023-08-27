@@ -7,9 +7,9 @@ image: /pfp.png
 ---
 I'm a second-year student at Georgia Tech, where I'm studying Computer Science and Philosophy.
 
-I'm interested in the intersection of artificial intelligence (AI) and human-computer interaction (HCI), as well as product management (PM) in general. 
+I'm deeply interested in the responsible development and deployment of artificial intelligence (AI). My focus lies at the intersection of AI alignment, ethics, and machine learning. I believe that AI has the potential to significantly advance humanity, provided we navigate its development with caution.
 
-Previously, I interned with Microsoft at M365 Core under The New Technologist program.
+I was a New Technologist intern at Microsoft under M365 Core; I gained experience in both product management and software engineering.
 
-Outside of school and work, I enjoy Brazilian Jiu-Jitsu and powerlifting. I like learning computer science theory and (sometimes) philosophy and love [music](https://www.youtube.com/watch?v=FL7xO92hRDI), video games, and [movies](https://letterboxd.com/juliusdcreator/) in my free time.
+I practice Brazilian Jiu-Jitsu and powerlifting, like learning computer science theory and (sometimes) philosophy, and love [music](https://www.youtube.com/watch?v=FL7xO92hRDI), video games, and [movies](https://letterboxd.com/juliusdcreator/) in my free time.
 
