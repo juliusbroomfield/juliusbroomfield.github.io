@@ -11,5 +11,5 @@ I'm deeply interested in the responsible development and deployment of artificia
 
 I was a New Technologist intern at Microsoft under M365 Core; I gained experience in both product management and software engineering.
 
-I practice Brazilian Jiu-Jitsu and powerlifting, like learning computer science theory and (sometimes) philosophy, and love [music](https://www.youtube.com/watch?v=FL7xO92hRDI), video games, and [movies](https://letterboxd.com/juliusdcreator/) in my free time.
+I practice Brazilian Jiu-Jitsu and powerlifting, like learning computer science theory and (sometimes) philosophy, and love [music](https://www.youtube.com/watch?v=NqhkqnSg164&ab_channel=Stereolab-Topic), [video games](https://www.youtube.com/watch?v=J5fpTvdExsY&ab_channel=Zygart), and [movies](https://letterboxd.com/juliusdcreator/) in my free time.
 
