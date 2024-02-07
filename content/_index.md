@@ -5,11 +5,9 @@ draft: false
 layout: landing_page
 image: /pfp.png
 ---
-I'm a second-year student at Georgia Tech, where I'm studying Computer Science and Philosophy.
+I'm a second-year student at Georgia Tech, where I'm studying Computer Science and Philosophy, with concentrations in Artificial Intelligence and Modeling & Simulation.
 
-I'm interested in AI and HCI, specifically AI alignment, Explainable AI (XAI), and machine learning.
+Broadly, I'm mostly interested in AI, specifically AI alignment research. Outside of AI, I like learning about computer science theory and (sometimes) philosophy.
 
-This summer, I was a SWE & PM intern at Microsoft as a New Technologist intern
-
-I practice Brazilian Jiu-Jitsu and powerlifting, like learning computer science theory and (sometimes) philosophy, and love [music](https://www.youtube.com/watch?v=NqhkqnSg164&ab_channel=Stereolab-Topic), [video games](https://www.youtube.com/watch?v=J5fpTvdExsY&ab_channel=Zygart), and [movies](https://letterboxd.com/juliusdcreator/) in my free time.
+Previously, I've interned at Microsoft.
 
