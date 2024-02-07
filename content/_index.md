@@ -3,7 +3,7 @@ title: ""
 date: 2023-08-09T00:00:57-04:00
 draft: false
 layout: landing_page
-image: /pfp.png
+image:
 ---
 I'm a second-year student at Georgia Tech, where I'm studying Computer Science and Philosophy, with concentrations in Artificial Intelligence and Modeling & Simulation.
 
