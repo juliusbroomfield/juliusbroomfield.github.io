@@ -1,4 +1,4 @@
-baseURL = 'https://juliusthecreator.github.io/'
+baseURL = 'https://juliusbroomfield.github.io/'
 languageCode = 'en-us'
 title = 'Julius Broomfield'
 theme = 'barks'
@@ -16,7 +16,7 @@ favicon = 'static/favicon.ico'
 
 [[menu.main]]
     name = "CV"
-    url = "https://juliusthecreator.github.io/docs/Official_Resume.pdf"
+    url = "https://juliusbroomfield.github.io/docs/Official_Resume.pdf"
     weight = 1
 
 [params.social]
@@ -28,7 +28,7 @@ favicon = 'static/favicon.ico'
     [params.social.github]
         name = "GitHub"
         class = "fab fa-github"
-        url = "https://github.com/juliusthecreator"
+        url = "https://github.com/juliusbroomfield"
         weight = 2
     [params.social.linkedin]
         name = "LinkedIn"
