@@ -14,8 +14,18 @@ favicon = 'static/favicon.ico'
     text_color = "#333333"
     link_color = "#9277B0"
 
+[menus]
+
 [[menu.main]]
-    name = "CV"
+    name = "Papers"
+    url = "https://juliusbroomfield.github.io/docs/Official_Resume.pdf"
+    weight = 1
+[[menu.main]]
+    name = "Reading"
+    url = "https://juliusbroomfield.github.io/docs/Official_Resume.pdf"
+    weight = 1
+[[menu.main]]
+    name = "Projects"
     url = "https://juliusbroomfield.github.io/docs/Official_Resume.pdf"
     weight = 1
 
