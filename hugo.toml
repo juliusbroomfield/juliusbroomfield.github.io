@@ -21,6 +21,11 @@ favicon = 'static/favicon.ico'
     url = "https://juliusbroomfield.github.io/"
     weight = 1
 
+[[menu.main]]
+  name = "Papers"
+  url = "/papers/"
+  weight = 2
+
 [params.social]
     [params.social.email]
         name = "E-Mail"
