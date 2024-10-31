@@ -35,3 +35,9 @@ favicon = 'static/favicon.ico'
         class = "fab fa-linkedin-in"
         url = "https://www.linkedin.com/in/juliusbroomfield/"
         weight = 3
+    [params.social.google_scholar]
+        name = "Google Scholar"
+        class = "ai ai-google-scholar-square"
+        url = "https://scholar.google.com/citations?user=mXzRbw8AAAAJ&hl=en&authuser=1"
+        weight = 4
+        
