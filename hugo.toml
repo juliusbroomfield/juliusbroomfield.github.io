@@ -17,16 +17,8 @@ favicon = 'static/favicon.ico'
 [menus]
 
 [[menu.main]]
-    name = "Papers"
-    url = "https://juliusbroomfield.github.io/docs/Official_Resume.pdf"
-    weight = 1
-[[menu.main]]
-    name = "Reading"
-    url = "https://juliusbroomfield.github.io/docs/Official_Resume.pdf"
-    weight = 1
-[[menu.main]]
-    name = "Projects"
-    url = "https://juliusbroomfield.github.io/docs/Official_Resume.pdf"
+    name = "About"
+    url = "https://juliusbroomfield.github.io/"
     weight = 1
 
 [params.social]
