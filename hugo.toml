@@ -18,6 +18,10 @@ favicon = 'static/favicon.ico'
     name = "CV"
     url = "https://juliusbroomfield.github.io/docs/Official_Resume.pdf"
     weight = 1
+[[menu.main]]
+    name = "CV"
+    url = "https://juliusbroomfield.github.io/docs/Official_Resume.pdf"
+    weight = 1
 
 [params.social]
     [params.social.email]
