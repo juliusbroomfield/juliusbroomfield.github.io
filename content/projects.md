@@ -25,7 +25,7 @@ I’m currently going through papers on [LLMs in knowledge graphs](https://dl.ac
 ---
 
 ### 💡 Ideate
-Ideate is a web app. I built alongside a team of 4 for PennApps XXIV. Users can record videos of them and their team ideating, sketching high-level system design and simple whiteboard coding, and automatically turn it to functional code in a Github repository. Multimodal models weren't widely avaliable during this time, so this application looked to fill that gap. Once users uploaded their video, we picked up text from their video's audio, and captured frames from the video, using OCR to pick up any relevant text. This was fed into the OpenAI API, which would then output code in response to the video.
+Ideate is a web app I built alongside a team of 4 for PennApps XXIV. Users can record videos of them and their team ideating, sketching high-level system design and simple whiteboard coding, and automatically turn it to functional code in a Github repository. Multimodal models weren't widely avaliable during this time, so this application sought to fill that gap. Once users uploaded their video, I picked up words from their video's audio, and captured visual frames from the video, using OCR to pick up any relevant text. This was fed into the OpenAI API, which would then output code in response to the video.
 
 - [Code](https://github.com/juliusbroomfield/ideate)
 
