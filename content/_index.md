@@ -17,4 +17,4 @@ I'm mostly interested in...
 
 In my free time, I like listening to [music](https://1001albumsgenerator.com/shares/66e2590579338f0c0391913f) (a lot), [chess](https://www.chess.com/member/juliusdcreator) (not that good), games outside of chess (pretty good), staying somewhat active, and studying [philosophy]() (sometimes).
 
-Feel free to reach out, always down to connect and chat! (probably best to reach out via. [LinkedIn](https://www.linkedin.com/in/juliusbroomfield/))
+Feel free to reach out, always down to connect and chat (probably best to reach out via. [LinkedIn](https://www.linkedin.com/in/juliusbroomfield/))!
