@@ -15,5 +15,5 @@ I'm mostly interested in...
 
 - **AI + Philosophy:** Postmodernism; Critical Theory; Critical Data Studies; Philosophy of Ethics, Science; Existentialism
 
-In my free time, I like listening to [music](https://1001albumsgenerator.com/shares/66e2590579338f0c0391913f) (a lot), [chess](https://www.chess.com/member/juliusdcreator), games outside of chess, staying somewhat active, and studying [philosophy]() (sometimes).
+In my free time, I like listening to [music](https://1001albumsgenerator.com/shares/66e2590579338f0c0391913f) (a lot), [chess](https://www.chess.com/member/juliusdcreator) (not that good), games outside of chess (pretty good), staying somewhat active, and studying [philosophy]() (sometimes).
 
