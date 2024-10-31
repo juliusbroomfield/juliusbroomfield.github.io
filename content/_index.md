@@ -3,7 +3,7 @@ title: ""
 date: 2023-08-09T00:00:57-04:00
 draft: false
 ---
-I'm Julius, a third year student at Georgia Tech, where I'm studying Computer Science, Math, and Philosophy (the last two are my minors), with concentrations in Artificial Intelligence and Modeling & Simulation.
+I'm Julius, a third year undergrad at Georgia Tech, where I'm studying Computer Science, Math, and Philosophy (the last two are my minors), with concentrations in Artificial Intelligence and Modeling & Simulation.
 
 I'm mostly interested in...
 
