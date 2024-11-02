@@ -13,8 +13,6 @@ I'm mostly interested in...
 
 - **Computational Social Science:** Computational Sociology; Social Media; Information Diffusion; Social Network Analysis
 
-- **AI + Philosophy:** Postmodernism; Critical Theory; Critical Data Studies; Philosophy of Ethics, Science; Existentialism
-
 In my free time, I like listening to [music](https://1001albumsgenerator.com/shares/66e2590579338f0c0391913f) (a lot), [chess](https://www.chess.com/member/juliusdcreator) (not that good), games outside of chess (pretty good), staying somewhat active, and studying [philosophy]() (sometimes).
 
 Feel free to reach out, always down to connect and chat (probably best to reach out via. [LinkedIn](https://www.linkedin.com/in/juliusbroomfield/))!
