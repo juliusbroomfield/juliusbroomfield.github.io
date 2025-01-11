@@ -3,7 +3,7 @@ title: ""
 date: 2023-08-09T00:00:57-04:00
 draft: false
 ---
-I'm Julius, a third year undergrad at Georgia Tech, where I'm studying Computer Science, Math, and Philosophy (the last two are my minors), with concentrations in Artificial Intelligence and Modeling & Simulation.
+I'm a third year undergrad at Georgia Tech, where I'm studying Computer Science, Math, and Philosophy (the last two are my minors), with concentrations in Artificial Intelligence and Modeling & Simulation.
 
 I'm mostly interested in...
 
@@ -13,6 +13,4 @@ I'm mostly interested in...
 
 - **Computational Social Science:** Computational Sociology; Social Media; Information Diffusion; Social Network Analysis
 
-In my free time, I like listening to [music](https://1001albumsgenerator.com/shares/66e2590579338f0c0391913f) (a lot), [chess](https://www.chess.com/member/juliusdcreator) (not that good), games outside of chess (pretty good), staying somewhat active, and studying [philosophy]() (sometimes).
-
-Feel free to reach out, always down to connect and chat (probably best to reach out via. [LinkedIn](https://www.linkedin.com/in/juliusbroomfield/))!
+In my free time, I like listening to [music](https://1001albumsgenerator.com/shares/66e2590579338f0c0391913f) (a lot), [chess](https://www.chess.com/member/juliusdcreator) (not that good), games outside of chess (pretty good), staying somewhat active, and studying philosophy (sometimes).
