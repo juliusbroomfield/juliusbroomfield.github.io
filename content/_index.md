@@ -7,4 +7,4 @@ I'm a third year undergrad at Georgia Tech, where I'm studying Computer Science,
 
 I'm currently interested in topics in artificial intelligence and value alignment, algorithmic bias and fairness, game theory, and computational social science.
 
-In my free time, I like finding and listening to [music]([https://1001albumsgenerator.com/shares/66e2590579338f0c0391913f](https://www.last.fm/user/juliusdcreator)) (a lot), [chess](https://www.chess.com/member/juliusdcreator) (not that good), games outside of chess, staying relatively active, and studying philosophy (sometimes).
+In my free time, I like finding and listening to [music](https://www.last.fm/user/juliusdcreator) (a lot), [chess](https://www.chess.com/member/juliusdcreator) (not that good), games outside of chess, staying relatively active, and studying philosophy (sometimes).
