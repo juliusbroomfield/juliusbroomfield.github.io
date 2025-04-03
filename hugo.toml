@@ -15,11 +15,6 @@ favicon = 'static/favicon.ico'
     link_color = "#9277B0"
 
 [menus]
-
-[[menu.main]]
-    name = "About"
-    url = "https://juliusbroomfield.github.io/"
-    weight = 1
     
 [params.social]
     [params.social.email]
