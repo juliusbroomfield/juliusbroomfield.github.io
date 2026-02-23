@@ -1,40 +1,11 @@
-baseURL = 'https://juliusbroomfield.github.io/'
-languageCode = 'en-us'
-title = 'Julius Broomfield'
-theme = 'barks'
-favicon = 'static/favicon.ico'
+baseURL = "https://juliusbroomfield.com"
+languageCode = "en-us"
+title = "Julius Broomfield"
 
-[params.head]
-    author = "Julius Broomfield"
-    description = "Hi, I'm Julius, and this is my website!"
-
-[params.colors]
-    theme_color = "#333333"
-    background_color = "#fcfbf9"
-    text_color = "#333333"
-    link_color = "#9277B0"
-
-[menus]
-    
-[params.social]
-    [params.social.email]
-        name = "E-Mail"
-        class = "fas fa-envelope"
-        url = "mailto:broomfieldjuliusr@gmail.com"
-        weight = 1
-    [params.social.github]
-        name = "GitHub"
-        class = "fab fa-github"
-        url = "https://github.com/juliusbroomfield"
-        weight = 2
-    [params.social.linkedin]
-        name = "LinkedIn"
-        class = "fab fa-linkedin-in"
-        url = "https://www.linkedin.com/in/juliusbroomfield/"
-        weight = 3
-    [params.social.google_scholar]
-        name = "Google Scholar"
-        class = "ai ai-google-scholar-square"
-        url = "https://scholar.google.com/citations?user=mXzRbw8AAAAJ&hl=en&authuser=1"
-        weight = 4
-        
+[params]
+  email = "broomfieldjuliusr [at] gmail [dot] com"
+  github = "https://github.com/juliusbroomfield"
+  linkedin = "https://www.linkedin.com/in/juliusbroomfield/"
+  googlescholar = "https://scholar.google.com/citations?view_op=list_projects&hl=en&authuser=1&hl=en&user=mXzRbw8AAAAJ&authuser=1"
+  twitter = ""
+  cv = "/docs/resume.pdf"

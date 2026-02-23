@@ -1,0 +1,140 @@
+# data/favorites.yaml
+#
+# Edit this file to update your Personal section.
+# Just add/remove items and rebuild with `hugo build`.
+#
+# For cover art: save images to static/img/covers/ and reference them here,
+# or paste any external image URL directly.
+#
+# The `note` field is optional on every item — it shows on click/tap.
+# The `spotify` field is optional — adds a "Open in Spotify" link.
+#   Run fetch_favorites.py with SPOTIFY_CLIENT_ID set to auto-populate these,
+#   or paste URLs manually from open.spotify.com.
+
+albums:
+  - title: "98.12.28 Otokotachi no Wakare"
+    artist: "Fishmans"
+    cover: "https://upload.wikimedia.org/wikipedia/en/3/30/98.12.28_%E7%94%B7%E9%81%94%E3%81%AE%E5%88%A5%E3%82%8C_Album_Art.jpg"
+
+  - title: "Good Kid, M.A.A.D City"
+    artist: "Kendrick Lamar"
+    cover: "https://i.scdn.co/image/ab67616d0000b273d58e537cea05c2156792c53d"
+    note: ""
+
+  - title: "Animals"
+    artist: "Pink Floyd"
+    cover: "https://i.scdn.co/image/ab67616d0000b2739c05a821e50729396fd5f5fb"
+
+  - title: "Injury Reserve"
+    artist: "Injury Reserve"
+    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr0Wq70PsN2oAqgV4-w_SITOUYNAbLdVbz0Q&s"
+
+  - title: "Southernplayalisticadillacmuzik"
+    artist: "Outkast"
+    cover: "https://upload.wikimedia.org/wikipedia/en/4/4c/Outkast-southernplayalisticadillacmuzik.jpg"
+
+  - title: "All Things Must Pass"
+    artist: "George Harrison"
+    cover: "https://upload.wikimedia.org/wikipedia/en/a/a1/All_Things_Must_Pass_1970_cover.jpg"
+
+  - title: "In Rainbows"
+    artist: "Radiohead"
+    cover: "https://i.scdn.co/image/ab67616d0000b273de3c04b5fc750b68899b20a9"
+
+  - title: "Metaphorical Music"
+    artist: "Nujabes"
+    cover: "https://i.scdn.co/image/ab67616d00001e02a1a897ee5e642da6d945bcd7"
+
+  - title: "Miseducation of Lauryn Hill"
+    artist: "Lauryn Hill"
+    cover: "https://i.scdn.co/image/ab67616d0000b27365d1c805f762520723ddb8d0"
+
+  - title: "Random Access Memories"
+    artist: "Daft Punk"
+    cover: "https://i.scdn.co/image/ab67616d0000b2739b9b36b0e22870b9f542d937"
+
+  - title: "InnerSpeaker"
+    artist: "Tame Impala"
+    cover: "https://i.scdn.co/image/ab67616d0000b273176e82d09ac75d62810f0056"
+    
+  - title: "Under Pressure"
+    artist: "Logic"
+    cover: "https://upload.wikimedia.org/wikipedia/en/d/df/Logic_Under_Pressure_9.10.14.jpg"
+
+movies:
+  - title: "Boogie Nights"
+    director: "Paul Thomas Anderson"
+    year: "1997"
+    poster: "https://cdng.europosters.eu/pod_public/1300/184054.jpg"
+
+  - title: "Dave Chappelle's Block Party"
+    director: "Michel Gondry"
+    year: "2005"
+    poster: "https://a.ltrbxd.com/resized/film-poster/5/1/7/6/7/51767-dave-chappelle-s-block-party-0-1000-0-1500-crop.jpg?v=dd2ad36270"
+
+  - title: "Mean Girls"
+    director: "Mark Waters"
+    year: "2004"
+    poster: "https://a.ltrbxd.com/resized/film-poster/4/6/0/4/9/46049-mean-girls-0-1000-0-1500-crop.jpg?v=e6378abb7b"
+
+  - title: "Mulholland Drive"
+    director: "David Lynch"
+    year: "2001"
+    poster: "https://a.ltrbxd.com/resized/sm/upload/kv/7n/p8/tv/fMC8JBWx2VjsJ53JopAcFjqmlYv-0-1000-0-1500-crop.jpg?v=3d69c00608"
+
+  - title: "Inception"
+    director: "Christopher Nolan"
+    year: "2010"
+    poster: "https://a.ltrbxd.com/resized/sm/upload/sv/95/s9/4j/inception-0-1000-0-1500-crop.jpg?v=30d7224316"
+    note: ""
+    
+shows:
+  - title: "The Wire"
+    year: "2002"
+    poster: "https://masterimages.moviepostershop.com/the-wire-movie-poster-2002-1010205231.jpg"
+
+  - title: "Fleabag"
+    year: "2016"
+    poster: "https://m.media-amazon.com/images/M/MV5BMjA4MzU5NzQxNV5BMl5BanBnXkFtZTgwOTg3MDA5NzM@._V1_.jpg"
+
+  - title: "Atlanta"
+    year: "2016"
+    poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQER4a6ivFk4-ac3CYwx0gXvoA2CSQPXxC9AA&s"
+
+  - title: "BEEF"
+    year: "2023"
+    poster: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fe/Beef_%28TV_series%29_poster.jpg/250px-Beef_%28TV_series%29_poster.jpg"
+
+  - title: "Pantheon"
+    year: "2022"
+    poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSshQjcMlLb9llN_Mg_D7fS1OZq9bCCB3ty1A&s"
+
+readings:
+  - title: "The Sovereignty of Good"
+    author: "Iris Murdoch"
+    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXpUJqjS6Sb-3YAdjneNaRyLXwlk1J0G8BWg&s"
+    note: ""
+
+  - title: "Metamagical Themas"
+    author: "Douglas Hofstadter"
+    cover: "https://upload.wikimedia.org/wikipedia/en/7/7a/Metamagical_Themas.jpg"
+
+  - title: "Famine, Affluence, and Morality"
+    author: "Peter Singer"
+    cover: "https://m.media-amazon.com/images/I/81pxzugRXiL._AC_UF1000,1000_QL80_.jpg"
+
+  - title: "Moral Luck"
+    author: "Bernard Williams"
+    cover: "https://m.media-amazon.com/images/I/61O6jCDEaFL._AC_UF1000,1000_QL80_.jpg"
+
+  - title: "The Climber"
+    author: "Shin-ichi Sakamoto"
+    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX8_ESRdTSdIYWszKiSxZMyUm0VpQcOkYcYg&s"
+
+  - title: "Vinland Saga"
+    author: "Makoto Yukimura"
+    cover: "https://upload.wikimedia.org/wikipedia/en/thumb/5/51/Vinland_Saga_volume_01_cover.jpg/250px-Vinland_Saga_volume_01_cover.jpg"
+
+  - title: "20th Century Boys"
+    author: "Naoki Urasawa"
+    cover: "https://m.media-amazon.com/images/I/81TZrYTkAkL._AC_UF1000,1000_QL80_.jpg"

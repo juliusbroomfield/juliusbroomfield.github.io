@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Julius Broomfield - NLP researcher at Georgia Tech working on AI alignment.">
+  <title>Julius Broomfield</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+
+<body>
+  <div class="site-wrapper">
+
+      <!-- Sidebar Nav -->
+    <nav class="site-nav">
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <!-- <a href="#projects">Works</a> -->
+      <a href="#personal">Personal</a>
+    </nav>
+    <!-- Main Content -->
+    <div class="site-main">
+
+      <!-- Header -->
+      <header class="site-header">
+        <h1>Julius Broomfield</h1>
+        <div class="email">{{ .Site.Params.email }}</div>
+        <div class="site-links">
+          <a href="{{ .Site.Params.linkedin }}" target="_blank">LinkedIn</a>
+          <span class="sep">/</span>
+          <a href="{{ .Site.Params.github }}" target="_blank">GitHub</a>
+          <span class="sep">/</span>
+          <a href="{{ .Site.Params.googlescholar }}" target=_blank>Google Scholar</a>
+          <span class="sep">/</span>
+          <a href="{{ .Site.Params.cv }}" target="_blank">Resume</a>
+        </div>
+      </header>
+
+      <!-- About -->
+      <section id="about">
+        <div class="about-content">
+          {{ .Content }}
+        </div>
+      </section>
+
+      <!-- Publications -->
+      <section id="publications">
+        <h2>Publications</h2>
+        <ul class="pub-list">
+          {{ range .Site.Data.publications }}
+          <li class="pub-item">
+            {{ if .url }}
+              <a href="{{ .url }}" class="pub-title" target="_blank">{{ .title }}</a>
+            {{ else }}
+              <span class="pub-title">{{ .title }}</span>
+            {{ end }}
+            <div class="pub-authors">{{ .authors }}</div>
+            <div class="pub-venue">{{ .venue }}</div>
+          </li>
+          {{ end }}
+        </ul>
+      </section>
+
+      <!-- Section: change -->
+      {{/*
+      <!-- Works -->
+      <section id="Works">
+        <h2>Works</h2>
+        <p class="projects-subtitle">* In Progress!</p>
+        <ul class="project-list">
+          {{ range .Site.Data.projects }}
+          <li class="project-item">
+            <div class="project-title">
+              {{ if .url }}
+                <a href="{{ .url }}" target="_blank">{{ .title }}</a>
+              {{ else }}
+                {{ .title }}
+              {{ end }}
+            </div>
+            <div class="project-desc">{{ .description }}</div>
+          </li>
+          {{ end }}
+        </ul>
+      </section>
+      */}}
+
+      <!-- Personal -->
+      <section id="personal">
+        <h2>Personal</h2>
+        <p class="personal-subtitle">Some of my favorites.</p>
+
+        <div class="media-tabs">
+          <button class="media-tab active" data-tab="albums">Albums</button>
+          <button class="media-tab" data-tab="movies">Movies</button>
+          <button class="media-tab" data-tab="shows">Shows</button>
+          <button class="media-tab" data-tab="readings">Readings</button>
+        </div>
+
+        <!-- ALBUMS – Vinyl Crate -->
+        <div class="media-panel active" id="panel-albums">
+          <div class="crate-container">
+            <button class="crate-nav prev" aria-label="Scroll left">‹</button>
+            <button class="crate-nav next" aria-label="Scroll right">›</button>
+            <div class="crate">
+              <div class="vinyl-track" id="vinyl-track">
+                {{ range $i, $a := .Site.Data.favorites.albums }}
+                <div class="vinyl-slot"
+                     data-index="{{ $i }}"
+                     data-title="{{ .title }}"
+                     data-artist="{{ .artist }}"
+                     {{ with .note }}data-note="{{ . }}"{{ end }}>
+                  <div class="vinyl-spine"></div>
+                  <div class="vinyl-record"></div>
+                  <div class="vinyl-cover-wrap">
+                    <div class="vinyl-cover">
+                      <img src="{{ .cover | relURL }}" alt="{{ .title }}" loading="lazy" crossorigin="anonymous">
+                    </div>
+                  </div>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+          <div class="vinyl-info-bar" id="vinyl-info-bar"></div>
+        </div>
+
+        <!-- MOVIES -->
+        <div class="media-panel" id="panel-movies">
+          <div class="poster-wall">
+            {{ range .Site.Data.favorites.movies }}
+            <div class="poster-card">
+              <div class="poster-frame">
+                <img src="{{ .poster | relURL }}" alt="{{ .title }}" loading="lazy">
+              </div>
+              <div class="poster-info">
+                <div class="poster-title">{{ .title }}</div>
+                <div class="poster-meta">{{ with .director }}{{ . }} · {{ end }}{{ .year }}</div>
+                {{ with .note }}<div class="item-note">{{ . }}</div>{{ end }}
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+        <!-- SHOWS -->
+        <div class="media-panel" id="panel-shows">
+          <div class="poster-wall">
+            {{ range .Site.Data.favorites.shows }}
+            <div class="poster-card">
+              <div class="poster-frame">
+                <img src="{{ .poster | relURL }}" alt="{{ .title }}" loading="lazy">
+              </div>
+              <div class="poster-info">
+                <div class="poster-title">{{ .title }}</div>
+                <div class="poster-meta">{{ .year }}</div>
+                {{ with .note }}<div class="item-note">{{ . }}</div>{{ end }}
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+        <!-- READINGS -->
+        <div class="media-panel" id="panel-readings">
+          <div class="bookshelf">
+            <div class="book-row" id="book-row">
+              {{ range $i, $b := .Site.Data.favorites.readings }}
+              <div class="book-item"
+                   data-index="{{ $i }}"
+                   data-title="{{ .title }}"
+                   data-author="{{ .author }}"
+                   {{ with .note }}data-note="{{ . }}"{{ end }}>
+                <div class="book-cover">
+                  <img src="{{ .cover | relURL }}" alt="{{ .title }}" loading="lazy">
+                </div>
+              </div>
+              {{ end }}
+            </div>
+            <div class="shelf-plank"></div>
+            <div class="shelf-info-area" id="shelf-info-area">
+              <div class="shelf-hint">Click a book to see more</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+  <footer class="site-footer">
+    Julius Broomfield · {{ now.Year }} · Hosted on <a href="https://pages.github.com/">GitHub Pages</a> · Built with <a href="https://gohugo.io/">Hugo</a>
+  </footer>
+
+    </div><!-- /.site-main -->
+  </div><!-- /.site-wrapper -->
+
+  <script>
+    // ─── Sidebar active tracking ───
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.site-nav a');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`.site-nav a[href="#${entry.target.id}"]`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+    sections.forEach(section => observer.observe(section));
+
+    // ─── Media tabs ───
+    document.querySelectorAll('.media-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.media-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.media-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(`panel-${tab.dataset.tab}`).classList.add('active');
+      });
+    });
+
+    // ─── Dominant color extraction ───
+    function getDominantColor(img) {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = 8;
+      canvas.height = 8;
+      ctx.drawImage(img, 0, 0, 8, 8);
+      try {
+        const data = ctx.getImageData(0, 0, 8, 8).data;
+        let r = 0, g = 0, b = 0, count = 0;
+        for (let i = 0; i < data.length; i += 4) {
+          // Skip very dark and very light pixels
+          const lum = data[i] * 0.299 + data[i+1] * 0.587 + data[i+2] * 0.114;
+          if (lum > 20 && lum < 240) {
+            r += data[i]; g += data[i+1]; b += data[i+2]; count++;
+          }
+        }
+        if (count === 0) return '#555';
+        r = Math.round(r / count); g = Math.round(g / count); b = Math.round(b / count);
+        return `#${r.toString(16).padStart(2,'0')}${g.toString(16).padStart(2,'0')}${b.toString(16).padStart(2,'0')}`;
+      } catch(e) { return '#555'; }
+    }
+
+    // Apply dominant colors once images load
+    document.querySelectorAll('.vinyl-slot').forEach(slot => {
+      const img = slot.querySelector('.vinyl-cover img');
+      if (!img) return;
+      const apply = () => {
+        const color = getDominantColor(img);
+        slot.style.setProperty('--spine-color', color);
+      };
+      if (img.complete && img.naturalWidth) apply();
+      else img.addEventListener('load', apply);
+    });
+
+    // ─── Vinyl crate – window of 3 ───
+    const vinylTrack = document.getElementById('vinyl-track');
+    const vinylInfoBar = document.getElementById('vinyl-info-bar');
+    const prevBtn = document.querySelector('.crate-nav.prev');
+    const nextBtn = document.querySelector('.crate-nav.next');
+    const slots = document.querySelectorAll('.vinyl-slot');
+    const VISIBLE = 3;
+    let windowStart = 0;
+
+    function setWindow(start) {
+      start = Math.max(0, Math.min(start, slots.length - VISIBLE));
+      windowStart = start;
+      slots.forEach(s => s.classList.remove('active'));
+
+      const infoParts = [];
+      for (let i = start; i < start + VISIBLE && i < slots.length; i++) {
+        slots[i].classList.add('active');
+        infoParts.push(`
+          <div class="vinyl-info-item">
+            <span class="album-name">${slots[i].dataset.title}</span>
+            <span class="artist-name">${slots[i].dataset.artist}</span>
+            ${slots[i].dataset.note ? `<span class="item-note">${slots[i].dataset.note}</span>` : ''}
+          </div>
+        `);
+      }
+
+      vinylInfoBar.innerHTML = `
+        <div class="vinyl-info-row">${infoParts.join('')}</div>
+        <div class="album-counter">${start + 1}–${Math.min(start + VISIBLE, slots.length)} / ${slots.length}</div>
+      `;
+
+      prevBtn.classList.toggle('disabled', start === 0);
+      nextBtn.classList.toggle('disabled', start >= slots.length - VISIBLE);
+    }
+
+    // Start with first 3 pulled out
+    setWindow(0);
+
+    // Click a spine to shift window to include it
+    slots.forEach(slot => {
+      slot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const idx = parseInt(slot.dataset.index);
+        if (idx < windowStart) setWindow(idx);
+        else if (idx >= windowStart + VISIBLE) setWindow(idx - VISIBLE + 1);
+      });
+    });
+
+    // Arrows shift by 1
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); setWindow(windowStart - 1); });
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); setWindow(windowStart + 1); });
+
+    // Keyboard arrows
+    document.addEventListener('keydown', (e) => {
+      if (!document.getElementById('panel-albums').classList.contains('active')) return;
+      if (e.key === 'ArrowRight') { e.preventDefault(); setWindow(windowStart + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); setWindow(windowStart - 1); }
+    });
+
+    // ─── Poster rotation + click ───
+    const posterRotations = [-2.5, 1.5, -1, 2, -1.8, 0.8, -2, 1.2];
+    document.querySelectorAll('.poster-card').forEach((card, i) => {
+      const rot = posterRotations[i % posterRotations.length];
+      card.style.transform = `rotate(${rot}deg)`;
+      card.addEventListener('click', () => {
+        const wasActive = card.classList.contains('active');
+        card.closest('.poster-wall').querySelectorAll('.poster-card').forEach(c => c.classList.remove('active'));
+        if (!wasActive) card.classList.add('active');
+      });
+      card.addEventListener('mouseleave', () => {
+        if (!card.classList.contains('active')) card.style.transform = `rotate(${rot}deg)`;
+      });
+    });
+
+    // ─── Book click/hover → shelf info area ───
+    const shelfInfoArea = document.getElementById('shelf-info-area');
+    document.querySelectorAll('.book-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const was = item.classList.contains('active');
+        document.querySelectorAll('.book-item').forEach(b => b.classList.remove('active'));
+        if (!was) {
+          item.classList.add('active');
+          shelfInfoArea.innerHTML = `
+            <div class="book-info-active visible">
+              <div class="book-title">${item.dataset.title}</div>
+              <div class="book-author">${item.dataset.author}</div>
+              ${item.dataset.note ? `<div class="item-note">${item.dataset.note}</div>` : ''}
+            </div>
+          `;
+        } else {
+          shelfInfoArea.innerHTML = `<div class="shelf-hint">Click a book to see more</div>`;
+        }
+      });
+      item.addEventListener('mouseenter', () => {
+        if (!document.querySelector('.book-item.active')) {
+          shelfInfoArea.innerHTML = `
+            <div class="book-info-active visible">
+              <div class="book-title">${item.dataset.title}</div>
+              <div class="book-author">${item.dataset.author}</div>
+            </div>
+          `;
+        }
+      });
+      item.addEventListener('mouseleave', () => {
+        if (!document.querySelector('.book-item.active')) {
+          shelfInfoArea.innerHTML = `<div class="shelf-hint">Click a book to see more</div>`;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
