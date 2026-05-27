@@ -62,15 +62,25 @@ albums:
     cover: "https://upload.wikimedia.org/wikipedia/en/d/df/Logic_Under_Pressure_9.10.14.jpg"
 
 movies:
-  - title: "Boogie Nights"
+  - title: "Magnolia"
     director: "Paul Thomas Anderson"
-    year: "1997"
-    poster: "https://cdng.europosters.eu/pod_public/1300/184054.jpg"
+    year: "1999"
+    poster: "https://a.ltrbxd.com/resized/film-poster/5/1/7/2/8/51728-magnolia-0-230-0-345-crop.jpg?v=178b5e5c17"
+
+  - title: "In the Mood for Love"
+    director: "Wong Kar-wai"
+    year: "2000"
+    poster: "https://upload.wikimedia.org/wikipedia/en/4/45/In_the_Mood_for_Love_movie.jpg"
 
   - title: "Dave Chappelle's Block Party"
     director: "Michel Gondry"
     year: "2005"
     poster: "https://a.ltrbxd.com/resized/film-poster/5/1/7/6/7/51767-dave-chappelle-s-block-party-0-1000-0-1500-crop.jpg?v=dd2ad36270"
+
+  - title: "Boogie Nights"
+    director: "Paul Thomas Anderson"
+    year: "1997"
+    poster: "https://cdng.europosters.eu/pod_public/1300/184054.jpg"
 
   - title: "Mean Girls"
     director: "Mark Waters"
@@ -87,8 +97,19 @@ movies:
     year: "2010"
     poster: "https://a.ltrbxd.com/resized/sm/upload/sv/95/s9/4j/inception-0-1000-0-1500-crop.jpg?v=30d7224316"
     note: ""
+
+  - title: "Good Will Hunting"
+    director: "Gus Van Sant"
+    year: "1997"
+    poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7jNxTItH8Wp2NkpaAMbAyX-YAN7DlXCE9sA&s"
+    note: ""
+  
     
 shows:
+  - title: "Atlanta"
+    year: "2016"
+    poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQER4a6ivFk4-ac3CYwx0gXvoA2CSQPXxC9AA&s"
+
   - title: "The Wire"
     year: "2002"
     poster: "https://masterimages.moviepostershop.com/the-wire-movie-poster-2002-1010205231.jpg"
@@ -97,10 +118,6 @@ shows:
     year: "2016"
     poster: "https://m.media-amazon.com/images/M/MV5BMjA4MzU5NzQxNV5BMl5BanBnXkFtZTgwOTg3MDA5NzM@._V1_.jpg"
 
-  - title: "Atlanta"
-    year: "2016"
-    poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQER4a6ivFk4-ac3CYwx0gXvoA2CSQPXxC9AA&s"
-
   - title: "BEEF"
     year: "2023"
     poster: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fe/Beef_%28TV_series%29_poster.jpg/250px-Beef_%28TV_series%29_poster.jpg"
@@ -108,6 +125,18 @@ shows:
   - title: "Pantheon"
     year: "2022"
     poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSshQjcMlLb9llN_Mg_D7fS1OZq9bCCB3ty1A&s"
+
+  - title: "Succession"
+    year: "2018"
+    poster: "https://m.media-amazon.com/images/M/MV5BYTY4YTVkY2QtMjRmOS00YzliLWIxOWQtMTdkOTVkN2UzODNmXkEyXkFqcGc@._V1_.jpg"
+
+  - title: "Barry"
+    year: "2018"
+    poster: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15032712_b_v11_aa.jpg"
+
+  - title: "Bojack Horseman"
+    year: "2014"
+    poster: "https://m.media-amazon.com/images/M/MV5BZmMwMDlkNTEtMmQzZS00ODQ0LWJlZmItOTgwYWMwZGM4MzFiXkEyXkFqcGc@._V1_.jpg"
 
 readings:
   - title: "The Sovereignty of Good"
