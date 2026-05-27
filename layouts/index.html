@@ -1,276 +1,462 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Julius Broomfield - NLP researcher at Georgia Tech working on AI alignment.">
-  <title>Julius Broomfield</title>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/css/main.css">
-</head>
+{{ define "main" }}
+<div class="profile-column" id="profile-column">
+  {{ partial "header.html" . }}
 
+  <!-- About -->
+  <section id="about">
+    <div class="about-content">
+      {{ .Content }}
+    </div>
+  </section>
+</div>
 
-<body>
-  <div class="site-wrapper">
+<div class="workspace-column" id="workspace-column">
+  <!-- Tabs Header -->
+  <div class="workspace-tabs-container">
+    <div class="workspace-tabs">
+      <button class="workspace-tab active" data-workspace-tab="publications">Publications</button>
+      <button class="workspace-tab" data-workspace-tab="projects">Projects</button>
+      <button class="workspace-tab" data-workspace-tab="philosophy">Philosophy</button>
+      <button class="workspace-tab" data-workspace-tab="personal">Favs</button>
+    </div>
+  </div>
 
-      <!-- Sidebar Nav -->
-    <nav class="site-nav">
-      <a href="#about">About</a>
-      <a href="#publications">Publications</a>
-      <!-- <a href="#projects">Works</a> -->
-      <a href="#personal">Personal</a>
-    </nav>
-    <!-- Main Content -->
-    <div class="site-main">
+  <!-- Workspace Panels -->
+  <div class="workspace-panels">
 
-      <!-- Header -->
-      <header class="site-header">
-        <h1>Julius Broomfield</h1>
-        <div class="email">{{ .Site.Params.email }}</div>
-        <div class="site-links">
-          <a href="{{ .Site.Params.linkedin }}" target="_blank">LinkedIn</a>
-          <span class="sep">/</span>
-          <a href="{{ .Site.Params.github }}" target="_blank">GitHub</a>
-          <span class="sep">/</span>
-          <a href="{{ .Site.Params.googlescholar }}" target=_blank>Google Scholar</a>
-          <span class="sep">/</span>
-          <a href="{{ .Site.Params.cv }}" target="_blank">Resume</a>
-        </div>
-      </header>
-
-      <!-- About -->
-      <section id="about">
-        <div class="about-content">
-          {{ .Content }}
-        </div>
-      </section>
-
-      <!-- Publications -->
-      <section id="publications">
-        <h2>Publications</h2>
-        <ul class="pub-list">
-          {{ range .Site.Data.publications }}
-          <li class="pub-item">
-            {{ if .url }}
-              <a href="{{ .url }}" class="pub-title" target="_blank">{{ .title }}</a>
-            {{ else }}
-              <span class="pub-title">{{ .title }}</span>
-            {{ end }}
-            <div class="pub-authors">{{ .authors }}</div>
-            <div class="pub-venue">{{ .venue }}</div>
-          </li>
+    <!-- PANEL: PUBLICATIONS -->
+    <div class="workspace-panel active" id="panel-publications">
+      <p class="personal-subtitle">Select publications. (*) denotes equal contribution.</p>
+      <ul class="pub-list">
+        {{ range .Site.Data.publications }}
+        <li class="pub-item">
+          {{ if .url }}
+          <a href="{{ .url }}" class="pub-title" target="_blank">{{ .title }}</a>
+          {{ else }}
+          <span class="pub-title">{{ .title }}</span>
           {{ end }}
-        </ul>
-      </section>
+          <div class="pub-authors">{{ .authors }}</div>
+          <div class="pub-venue">{{ .venue }}</div>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
 
-      <!-- Section: change -->
-      {{/*
-      <!-- Works -->
-      <section id="Works">
-        <h2>Works</h2>
-        <p class="projects-subtitle">* In Progress!</p>
-        <ul class="project-list">
-          {{ range .Site.Data.projects }}
-          <li class="project-item">
-            <div class="project-title">
-              {{ if .url }}
-                <a href="{{ .url }}" target="_blank">{{ .title }}</a>
-              {{ else }}
-                {{ .title }}
-              {{ end }}
-            </div>
-            <div class="project-desc">{{ .description }}</div>
-          </li>
-          {{ end }}
-        </ul>
-      </section>
-      */}}
+    <!-- PANEL: PERSONAL -->
+    <div class="workspace-panel" id="panel-personal">
+      <p class="personal-subtitle">some of my favorite pieces of media</p>
 
-      <!-- Personal -->
-      <section id="personal">
-        <h2>Personal</h2>
-        <p class="personal-subtitle">Some of my favorites.</p>
+      <div class="media-tabs">
+        <button class="media-tab active" data-tab="albums">Albums</button>
+        <button class="media-tab" data-tab="movies">Movies</button>
+        <button class="media-tab" data-tab="shows">Shows</button>
+        <button class="media-tab" data-tab="readings">Readings</button>
+      </div>
 
-        <div class="media-tabs">
-          <button class="media-tab active" data-tab="albums">Albums</button>
-          <button class="media-tab" data-tab="movies">Movies</button>
-          <button class="media-tab" data-tab="shows">Shows</button>
-          <button class="media-tab" data-tab="readings">Readings</button>
-        </div>
-
-        <!-- ALBUMS – Vinyl Crate -->
-        <div class="media-panel active" id="panel-albums">
-          <div class="crate-container">
-            <button class="crate-nav prev" aria-label="Scroll left">‹</button>
-            <button class="crate-nav next" aria-label="Scroll right">›</button>
-            <div class="crate">
-              <div class="vinyl-track" id="vinyl-track">
-                {{ range $i, $a := .Site.Data.favorites.albums }}
-                <div class="vinyl-slot"
-                     data-index="{{ $i }}"
-                     data-title="{{ .title }}"
-                     data-artist="{{ .artist }}"
-                     {{ with .note }}data-note="{{ . }}"{{ end }}>
-                  <div class="vinyl-spine"></div>
-                  <div class="vinyl-record"></div>
-                  <div class="vinyl-cover-wrap">
-                    <div class="vinyl-cover">
-                      <img src="{{ .cover | relURL }}" alt="{{ .title }}" loading="lazy" crossorigin="anonymous">
-                    </div>
+      <!-- ALBUMS – Vinyl Crate -->
+      <div class="media-panel active" id="panel-albums">
+        <div class="crate-container">
+          <button class="crate-nav prev" aria-label="Scroll left">‹</button>
+          <button class="crate-nav next" aria-label="Scroll right">›</button>
+          <div class="crate">
+            <div class="vinyl-track" id="vinyl-track">
+              {{ range $i, $a := .Site.Data.favorites.albums }}
+              <div class="vinyl-slot" data-index="{{ $i }}" data-title="{{ .title }}" data-artist="{{ .artist }}" {{
+                with .note }}data-note="{{ . }}" {{ end }}>
+                <div class="vinyl-spine"></div>
+                <div class="vinyl-record"></div>
+                <div class="vinyl-cover-wrap">
+                  <div class="vinyl-cover">
+                    <img src="{{ .cover | relURL }}" alt="{{ .title }}" loading="lazy" crossorigin="anonymous">
                   </div>
                 </div>
-                {{ end }}
-              </div>
-            </div>
-          </div>
-          <div class="vinyl-info-bar" id="vinyl-info-bar"></div>
-        </div>
-
-        <!-- MOVIES -->
-        <div class="media-panel" id="panel-movies">
-          <div class="poster-wall">
-            {{ range .Site.Data.favorites.movies }}
-            <div class="poster-card">
-              <div class="poster-frame">
-                <img src="{{ .poster | relURL }}" alt="{{ .title }}" loading="lazy">
-              </div>
-              <div class="poster-info">
-                <div class="poster-title">{{ .title }}</div>
-                <div class="poster-meta">{{ with .director }}{{ . }} · {{ end }}{{ .year }}</div>
-                {{ with .note }}<div class="item-note">{{ . }}</div>{{ end }}
-              </div>
-            </div>
-            {{ end }}
-          </div>
-        </div>
-
-        <!-- SHOWS -->
-        <div class="media-panel" id="panel-shows">
-          <div class="poster-wall">
-            {{ range .Site.Data.favorites.shows }}
-            <div class="poster-card">
-              <div class="poster-frame">
-                <img src="{{ .poster | relURL }}" alt="{{ .title }}" loading="lazy">
-              </div>
-              <div class="poster-info">
-                <div class="poster-title">{{ .title }}</div>
-                <div class="poster-meta">{{ .year }}</div>
-                {{ with .note }}<div class="item-note">{{ . }}</div>{{ end }}
-              </div>
-            </div>
-            {{ end }}
-          </div>
-        </div>
-
-        <!-- READINGS -->
-        <div class="media-panel" id="panel-readings">
-          <div class="bookshelf">
-            <div class="book-row" id="book-row">
-              {{ range $i, $b := .Site.Data.favorites.readings }}
-              <div class="book-item"
-                   data-index="{{ $i }}"
-                   data-title="{{ .title }}"
-                   data-author="{{ .author }}"
-                   {{ with .note }}data-note="{{ . }}"{{ end }}>
-                <div class="book-cover">
-                  <img src="{{ .cover | relURL }}" alt="{{ .title }}" loading="lazy">
-                </div>
               </div>
               {{ end }}
             </div>
-            <div class="shelf-plank"></div>
-            <div class="shelf-info-area" id="shelf-info-area">
-              <div class="shelf-hint">Click a book to see more</div>
-            </div>
           </div>
         </div>
-      </section>
+        <div class="vinyl-info-bar" id="vinyl-info-bar"></div>
+      </div>
 
-      <!-- Footer -->
-  <footer class="site-footer">
-    Julius Broomfield · {{ now.Year }} · Hosted on <a href="https://pages.github.com/">GitHub Pages</a> · Built with <a href="https://gohugo.io/">Hugo</a>
-  </footer>
+      <!-- MOVIES -->
+      <div class="media-panel" id="panel-movies">
+        <div class="poster-wall-container">
+          <div class="poster-wall">
+            {{ range .Site.Data.favorites.movies }}
+            <div class="poster-card" data-title="{{ .title }}" data-director="{{ .director }}" data-year="{{ .year }}"
+              {{ with .note }}data-note="{{ . }}" {{ end }}>
+              <div class="poster-frame">
+                <img src="{{ .poster | relURL }}" alt="{{ .title }}" loading="lazy">
+              </div>
+            </div>
+            {{ end }}
+          </div>
+          <div class="poster-info-area" id="movie-info-area">
+            <div class="poster-hint">Click a movie to see more</div>
+          </div>
+        </div>
+      </div>
 
-    </div><!-- /.site-main -->
-  </div><!-- /.site-wrapper -->
+      <!-- SHOWS -->
+      <div class="media-panel" id="panel-shows">
+        <div class="poster-wall-container">
+          <div class="poster-wall">
+            {{ range .Site.Data.favorites.shows }}
+            <div class="poster-card" data-title="{{ .title }}" data-year="{{ .year }}" {{ with .note
+              }}data-note="{{ . }}" {{ end }}>
+              <div class="poster-frame">
+                <img src="{{ .poster | relURL }}" alt="{{ .title }}" loading="lazy">
+              </div>
+            </div>
+            {{ end }}
+          </div>
+          <div class="poster-info-area" id="show-info-area">
+            <div class="poster-hint">Click a show to see more</div>
+          </div>
+        </div>
+      </div>
 
-  <script>
-    // ─── Sidebar active tracking ───
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.site-nav a');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => link.classList.remove('active'));
-          const activeLink = document.querySelector(`.site-nav a[href="#${entry.target.id}"]`);
-          if (activeLink) activeLink.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
-    sections.forEach(section => observer.observe(section));
+      <!-- READINGS -->
+      <div class="media-panel" id="panel-readings">
+        <div class="bookshelf">
+          <!-- Shelf 1 (First 4 books) -->
+          <div class="book-row">
+            {{ range $i, $b := .Site.Data.favorites.readings }}
+            {{ if lt $i 4 }}
+            <div class="book-item" data-index="{{ $i }}" data-title="{{ .title }}" data-author="{{ .author }}" {{ with
+              .note }}data-note="{{ . }}" {{ end }}>
+              <div class="book-cover">
+                <img src="{{ .cover | relURL }}" alt="{{ .title }}" loading="lazy">
+              </div>
+            </div>
+            {{ end }}
+            {{ end }}
+          </div>
+          <div class="shelf-plank"></div>
 
-    // ─── Media tabs ───
-    document.querySelectorAll('.media-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.media-tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.media-panel').forEach(p => p.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(`panel-${tab.dataset.tab}`).classList.add('active');
-      });
+          <!-- Shelf 2 (Remaining books) -->
+          <div class="book-row" style="margin-top: 24px;">
+            {{ range $i, $b := .Site.Data.favorites.readings }}
+            {{ if ge $i 4 }}
+            <div class="book-item" data-index="{{ $i }}" data-title="{{ .title }}" data-author="{{ .author }}" {{ with
+              .note }}data-note="{{ . }}" {{ end }}>
+              <div class="book-cover">
+                <img src="{{ .cover | relURL }}" alt="{{ .title }}" loading="lazy">
+              </div>
+            </div>
+            {{ end }}
+            {{ end }}
+          </div>
+          <div class="shelf-plank"></div>
+
+          <div class="shelf-info-area" id="shelf-info-area">
+            <div class="shelf-hint">Click a book to see more</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: PROJECTS -->
+    <div class="workspace-panel" id="panel-projects">
+      <p class="personal-subtitle">This page is currently under construction. Please check back soon!</p>
+
+      {{/*
+      <div id="projects-list-view">
+        <ul class="project-list">
+          {{ range (where .Site.RegularPages "Section" "projects") }}
+          <li class="project-item">
+            <div class="project-title">
+              <span class="project-title-text">{{ .Title }}</span>
+              {{ if .Params.in_progress }}
+              <span class="status-badge in-progress">In Progress</span>
+              {{ end }}
+            </div>
+            {{ if .Params.date }}
+            <div class="pub-authors">{{ .Date.Format "January 2006" }}</div>
+            {{ end }}
+            <div class="project-desc">{{ .Description }}</div>
+
+            <div class="project-links">
+              {{ if .Params.github }}
+              <a href="{{ .Params.github }}" target="_blank" class="project-link">GitHub &nearr;</a>
+              {{ end }}
+              {{ if .Params.paper }}
+              {{ if .Params.github }}<span class="sep">/</span>{{ end }}
+              <a href="{{ .Params.paper }}" target="_blank" class="project-link">Paper &nearr;</a>
+              {{ end }}
+              {{ if .Params.site }}
+              {{ if or .Params.github .Params.paper }}<span class="sep">/</span>{{ end }}
+              <a href="{{ .Params.site }}" target="_blank" class="project-link">Site &nearr;</a>
+              {{ end }}
+              {{ if .Params.video }}
+              {{ if or .Params.github .Params.paper .Params.site }}<span class="sep">/</span>{{ end }}
+              <a href="{{ .Params.video }}" target="_blank" class="project-link">Video &nearr;</a>
+              {{ end }}
+              {{ if .Params.slides }}
+              {{ if or .Params.github .Params.paper .Params.site .Params.video }}<span class="sep">/</span>{{ end }}
+              <a href="{{ .Params.slides }}" target="_blank" class="project-link">Slides &nearr;</a>
+              {{ end }}
+              {{ if and .Params.external_url (not (or .Params.github .Params.paper .Params.site .Params.video
+              .Params.slides)) }}
+              <a href="{{ .Params.external_url }}" target="_blank" class="project-link">Link &nearr;</a>
+              {{ end }}
+            </div>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <div id="project-detail-view" class="detail-view" style="display: none;"></div>
+      */}}
+    </div>
+
+    <!-- PANEL: PHILOSOPHY -->
+    <div class="workspace-panel" id="panel-philosophy">
+      <p class="personal-subtitle">This page is currently under construction. Please check back soon!</p>
+
+      {{/*
+      <div id="philosophy-list-view">
+        <ul class="project-list">
+          {{ range (where .Site.RegularPages "Section" "philosophy") }}
+          <li class="project-item">
+            <div class="project-title">
+              {{ if .Params.in_progress }}
+              <span class="project-title-text">{{ .Title }}</span>
+              <span class="status-badge in-progress">In Progress</span>
+              {{ else }}
+              <a href="javascript:void(0)" class="open-philosophy-btn"
+                data-philosophy-id="{{ .File.ContentBaseName }}">{{ .Title }}</a>
+              {{ end }}
+            </div>
+            {{ if .Params.date }}
+            <div class="pub-authors">{{ .Date.Format "January 2006" }}</div>
+            {{ end }}
+            <div class="project-desc">{{ .Description }}</div>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <div id="philosophy-detail-view" class="detail-view" style="display: none;"></div>
+      */}}
+    </div>
+
+  </div>
+</div>
+
+<!-- HIDDEN CONTENT STORE FOR INLINE DETAIL RENDERING -->
+<div id="content-store" style="display: none;">
+  <!-- Philosophy -->
+  {{ range (where .Site.RegularPages "Section" "philosophy") }}
+  <div id="store-philosophy-{{ .File.ContentBaseName }}">
+    <button class="back-to-list-btn" data-section="philosophy">&larr; Back to Philosophy</button>
+    <article class="single-post philosophy-post">
+      <header class="post-header">
+        <h2 class="post-title">{{ .Title }}</h2>
+        <div class="post-meta">
+          {{ if .Params.date }}
+          <span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
+          {{ end }}
+          {{ if .Params.external_url }}
+          {{ if .Params.date }}<span class="sep">/</span>{{ end }}
+          <a href="{{ .Params.external_url }}" target="_blank" class="external-link">Link &nearr;</a>
+          {{ end }}
+        </div>
+      </header>
+      <div class="post-content">
+        {{ .Content }}
+      </div>
+    </article>
+  </div>
+  {{ end }}
+</div>
+
+<script>
+  // ─── Workspace Tab Switching ───
+  const workspaceTabs = document.querySelectorAll('.workspace-tab');
+  const workspacePanels = document.querySelectorAll('.workspace-panel');
+
+  function resetListViews() {
+    const projDetail = document.getElementById('project-detail-view');
+    const projList = document.getElementById('projects-list-view');
+    const philDetail = document.getElementById('philosophy-detail-view');
+    const philList = document.getElementById('philosophy-list-view');
+
+    if (projDetail) projDetail.style.display = 'none';
+    if (projList) projList.style.display = 'block';
+    if (philDetail) philDetail.style.display = 'none';
+    if (philList) philList.style.display = 'block';
+  }
+
+  function activateTab(tabId) {
+    resetListViews();
+    workspaceTabs.forEach(tab => {
+      tab.classList.toggle('active', tab.dataset.workspaceTab === tabId);
+    });
+    workspacePanels.forEach(panel => {
+      panel.classList.toggle('active', panel.id === `panel-${tabId}`);
     });
 
-    // ─── Dominant color extraction ───
-    function getDominantColor(img) {
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.width = 8;
-      canvas.height = 8;
-      ctx.drawImage(img, 0, 0, 8, 8);
-      try {
-        const data = ctx.getImageData(0, 0, 8, 8).data;
-        let r = 0, g = 0, b = 0, count = 0;
-        for (let i = 0; i < data.length; i += 4) {
-          // Skip very dark and very light pixels
-          const lum = data[i] * 0.299 + data[i+1] * 0.587 + data[i+2] * 0.114;
-          if (lum > 20 && lum < 240) {
-            r += data[i]; g += data[i+1]; b += data[i+2]; count++;
-          }
-        }
-        if (count === 0) return '#555';
-        r = Math.round(r / count); g = Math.round(g / count); b = Math.round(b / count);
-        return `#${r.toString(16).padStart(2,'0')}${g.toString(16).padStart(2,'0')}${b.toString(16).padStart(2,'0')}`;
-      } catch(e) { return '#555'; }
+    // No sidebar nav to highlight
+
+    // Scroll right pane to top
+    document.getElementById('workspace-column').scrollTop = 0;
+  }
+
+  workspaceTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const tabId = tab.dataset.workspaceTab;
+      activateTab(tabId);
+      window.location.hash = tabId;
+    });
+  });
+
+  // No sidebar nav click events needed
+
+  // ─── Inline Content Details ───
+  document.querySelectorAll('.open-project-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.projectId;
+      const source = document.getElementById(`store-project-${id}`);
+      const dest = document.getElementById('project-detail-view');
+      dest.innerHTML = source.innerHTML;
+      dest.style.display = 'block';
+      document.getElementById('projects-list-view').style.display = 'none';
+      document.getElementById('workspace-column').scrollTop = 0;
+    });
+  });
+
+  document.querySelectorAll('.open-philosophy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.philosophyId;
+      const source = document.getElementById(`store-philosophy-${id}`);
+      const dest = document.getElementById('philosophy-detail-view');
+      dest.innerHTML = source.innerHTML;
+      dest.style.display = 'block';
+      document.getElementById('philosophy-list-view').style.display = 'none';
+      document.getElementById('workspace-column').scrollTop = 0;
+    });
+  });
+
+  // Global handler for dynamically copied back buttons
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('back-to-list-btn')) {
+      const section = e.target.dataset.section;
+      if (section === 'projects') {
+        document.getElementById('project-detail-view').style.display = 'none';
+        document.getElementById('projects-list-view').style.display = 'block';
+      } else if (section === 'philosophy') {
+        document.getElementById('philosophy-detail-view').style.display = 'none';
+        document.getElementById('philosophy-list-view').style.display = 'block';
+      }
+      document.getElementById('workspace-column').scrollTop = 0;
     }
+  });
 
-    // Apply dominant colors once images load
-    document.querySelectorAll('.vinyl-slot').forEach(slot => {
-      const img = slot.querySelector('.vinyl-cover img');
-      if (!img) return;
-      const apply = () => {
-        const color = getDominantColor(img);
-        slot.style.setProperty('--spine-color', color);
-      };
-      if (img.complete && img.naturalWidth) apply();
-      else img.addEventListener('load', apply);
+  // Load state from Hash value on direct navigation
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.substring(1);
+    if (hash === 'publications' || hash === 'personal' || hash === 'projects' || hash === 'philosophy') {
+      activateTab(hash);
+    } else if (hash.startsWith('projects-')) {
+      const projectId = hash.substring('projects-'.length);
+      activateTab('projects');
+      const btn = document.querySelector(`.open-project-btn[data-project-id="${projectId}"]`);
+      if (btn) btn.click();
+    } else if (hash.startsWith('philosophy-')) {
+      const essayId = hash.substring('philosophy-'.length);
+      activateTab('philosophy');
+      const btn = document.querySelector(`.open-philosophy-btn[data-philosophy-id="${essayId}"]`);
+      if (btn) btn.click();
+    } else {
+      // Default tab active state
+      activateTab('publications');
+    }
+  });
+
+  // ─── Media Sub-tabs (Personal Pane) ───
+  document.querySelectorAll('.media-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.media-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.media-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(`panel-${tab.dataset.tab}`).classList.add('active');
+    });
+  });
+
+  // ─── Dominant Color Extraction ───
+  function getDominantColor(img) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = 8;
+    canvas.height = 8;
+    ctx.drawImage(img, 0, 0, 8, 8);
+    try {
+      const data = ctx.getImageData(0, 0, 8, 8).data;
+      let r = 0, g = 0, b = 0, count = 0;
+      for (let i = 0; i < data.length; i += 4) {
+        const lum = data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114;
+        if (lum > 20 && lum < 240) {
+          r += data[i]; g += data[i + 1]; b += data[i + 2]; count++;
+        }
+      }
+      if (count === 0) return '#555';
+      r = Math.round(r / count); g = Math.round(g / count); b = Math.round(b / count);
+      return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+    } catch (e) { return '#555'; }
+  }
+
+  document.querySelectorAll('.vinyl-slot').forEach(slot => {
+    const img = slot.querySelector('.vinyl-cover img');
+    if (!img) return;
+    const apply = () => {
+      const color = getDominantColor(img);
+      slot.style.setProperty('--spine-color', color);
+    };
+    if (img.complete && img.naturalWidth) apply();
+    else img.addEventListener('load', apply);
+  });
+
+  // ─── Vinyl Crate ───
+  const vinylTrack = document.getElementById('vinyl-track');
+  const vinylInfoBar = document.getElementById('vinyl-info-bar');
+  const prevBtn = document.querySelector('.crate-nav.prev');
+  const nextBtn = document.querySelector('.crate-nav.next');
+  const slots = document.querySelectorAll('.vinyl-slot');
+  const getVisibleCount = () => window.innerWidth >= 1025 ? 2 : 3;
+  let VISIBLE = getVisibleCount();
+  let windowStart = 0;
+
+  window.addEventListener('resize', () => {
+    const newVisible = getVisibleCount();
+    if (newVisible !== VISIBLE) {
+      VISIBLE = newVisible;
+      setWindow(windowStart);
+    }
+  });
+
+  function setWindow(start) {
+    if (!slots.length) return;
+    start = Math.max(0, Math.min(start, slots.length - VISIBLE));
+    windowStart = start;
+
+    slots.forEach(s => {
+      s.classList.remove('active', 'lean-left', 'lean-right');
+      s.style.removeProperty('--slot-z-index');
+      s.style.marginLeft = '';
+      s.style.marginRight = '';
     });
 
-    // ─── Vinyl crate – window of 3 ───
-    const vinylTrack = document.getElementById('vinyl-track');
-    const vinylInfoBar = document.getElementById('vinyl-info-bar');
-    const prevBtn = document.querySelector('.crate-nav.prev');
-    const nextBtn = document.querySelector('.crate-nav.next');
-    const slots = document.querySelectorAll('.vinyl-slot');
-    const VISIBLE = 3;
-    let windowStart = 0;
-
-    function setWindow(start) {
-      start = Math.max(0, Math.min(start, slots.length - VISIBLE));
-      windowStart = start;
-      slots.forEach(s => s.classList.remove('active'));
-
-      const infoParts = [];
-      for (let i = start; i < start + VISIBLE && i < slots.length; i++) {
+    const infoParts = [];
+    for (let i = 0; i < slots.length; i++) {
+      if (i >= start && i < start + VISIBLE) {
         slots[i].classList.add('active');
+        slots[i].style.setProperty('--slot-z-index', 20 + (i - start));
+
+        if (i === start && start > 0) {
+          slots[i].style.marginLeft = 'auto';
+        }
+
         infoParts.push(`
           <div class="vinyl-info-item">
             <span class="album-name">${slots[i].dataset.title}</span>
@@ -278,92 +464,214 @@
             ${slots[i].dataset.note ? `<span class="item-note">${slots[i].dataset.note}</span>` : ''}
           </div>
         `);
+      } else if (i < start) {
+        slots[i].classList.add('lean-left');
+        slots[i].style.setProperty('--slot-z-index', 5 + i);
+      } else {
+        slots[i].classList.add('lean-right');
+        slots[i].style.setProperty('--slot-z-index', 5 + (slots.length - i));
+
+        if (i === start + VISIBLE && start + VISIBLE < slots.length) {
+          slots[i].style.marginLeft = 'auto';
+        }
       }
-
-      vinylInfoBar.innerHTML = `
-        <div class="vinyl-info-row">${infoParts.join('')}</div>
-        <div class="album-counter">${start + 1}–${Math.min(start + VISIBLE, slots.length)} / ${slots.length}</div>
-      `;
-
-      prevBtn.classList.toggle('disabled', start === 0);
-      nextBtn.classList.toggle('disabled', start >= slots.length - VISIBLE);
     }
 
-    // Start with first 3 pulled out
-    setWindow(0);
+    if (vinylInfoBar) {
+      vinylInfoBar.innerHTML = `
+        <div class="vinyl-info-row">${infoParts.join('')}</div>
+      `;
+    }
 
-    // Click a spine to shift window to include it
-    slots.forEach(slot => {
-      slot.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const idx = parseInt(slot.dataset.index);
-        if (idx < windowStart) setWindow(idx);
-        else if (idx >= windowStart + VISIBLE) setWindow(idx - VISIBLE + 1);
+    if (prevBtn) prevBtn.classList.toggle('disabled', start === 0);
+    if (nextBtn) nextBtn.classList.toggle('disabled', start >= slots.length - VISIBLE);
+  }
+
+  setWindow(0);
+
+  slots.forEach(slot => {
+    const idx = parseInt(slot.dataset.index);
+    slot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (idx < windowStart) setWindow(idx);
+      else if (idx >= windowStart + VISIBLE) setWindow(idx - VISIBLE + 1);
+    });
+
+    slot.addEventListener('mouseenter', () => {
+      if (slot.classList.contains('active')) return;
+      const isLeanLeft = idx < windowStart;
+      const isLeanRight = idx >= windowStart + VISIBLE;
+
+      slots.forEach(s => {
+        const sIdx = parseInt(s.dataset.index);
+        const spine = s.querySelector('.vinyl-spine');
+
+        s.style.transform = '';
+        if (spine) spine.style.transform = '';
+
+        if (isLeanLeft) {
+          if (sIdx > idx) {
+            s.style.transform = 'translateX(12px)';
+          }
+          if (spine && sIdx < windowStart) {
+            let r = -8;
+            if (sIdx <= idx) {
+              if (idx === 0) {
+                r = -3;
+              } else {
+                r = -8 + (sIdx / idx) * 5;
+              }
+            } else {
+              r = -3;
+            }
+            spine.style.transform = `rotateZ(${r}deg) translateX(-2px)`;
+          }
+        } else if (isLeanRight) {
+          if (sIdx < idx) {
+            s.style.transform = 'translateX(-12px)';
+          }
+          if (spine && sIdx >= windowStart + VISIBLE) {
+            let r = 8;
+            const n = slots.length - 1;
+            if (sIdx >= idx) {
+              if (idx === n) {
+                r = 3;
+              } else {
+                r = 8 - ((n - sIdx) / (n - idx)) * 5;
+              }
+            } else {
+              r = 3;
+            }
+            spine.style.transform = `rotateZ(${r}deg) translateX(2px)`;
+          }
+        }
       });
     });
 
-    // Arrows shift by 1
-    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); setWindow(windowStart - 1); });
-    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); setWindow(windowStart + 1); });
-
-    // Keyboard arrows
-    document.addEventListener('keydown', (e) => {
-      if (!document.getElementById('panel-albums').classList.contains('active')) return;
-      if (e.key === 'ArrowRight') { e.preventDefault(); setWindow(windowStart + 1); }
-      if (e.key === 'ArrowLeft') { e.preventDefault(); setWindow(windowStart - 1); }
+    slot.addEventListener('mouseleave', () => {
+      slots.forEach(s => {
+        s.style.transform = '';
+        const spine = s.querySelector('.vinyl-spine');
+        if (spine) spine.style.transform = '';
+      });
     });
+  });
 
-    // ─── Poster rotation + click ───
-    const posterRotations = [-2.5, 1.5, -1, 2, -1.8, 0.8, -2, 1.2];
-    document.querySelectorAll('.poster-card').forEach((card, i) => {
+  if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); setWindow(windowStart - 1); });
+  if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); setWindow(windowStart + 1); });
+
+  document.addEventListener('keydown', (e) => {
+    const activeWorkspace = document.querySelector('.workspace-tab.active');
+    if (activeWorkspace && activeWorkspace.dataset.workspaceTab !== 'personal') return;
+    const activeMedia = document.querySelector('.media-tab.active');
+    if (activeMedia && activeMedia.dataset.tab !== 'albums') return;
+
+    if (e.key === 'ArrowRight') { e.preventDefault(); setWindow(windowStart + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); setWindow(windowStart - 1); }
+  });
+
+  // ─── Poster Rotation & Info Area ───
+  const posterRotations = [-2.5, 1.5, -1, 2, -1.8, 0.8, -2, 1.2];
+
+  function setupPosterInfo(panelId, infoAreaId, hintText) {
+    const infoArea = document.getElementById(infoAreaId);
+    const panel = document.getElementById(panelId);
+    if (!panel || !infoArea) return;
+
+    const cards = panel.querySelectorAll('.poster-card');
+    cards.forEach((card, i) => {
       const rot = posterRotations[i % posterRotations.length];
       card.style.transform = `rotate(${rot}deg)`;
-      card.addEventListener('click', () => {
-        const wasActive = card.classList.contains('active');
-        card.closest('.poster-wall').querySelectorAll('.poster-card').forEach(c => c.classList.remove('active'));
-        if (!wasActive) card.classList.add('active');
-      });
-      card.addEventListener('mouseleave', () => {
-        if (!card.classList.contains('active')) card.style.transform = `rotate(${rot}deg)`;
-      });
-    });
 
-    // ─── Book click/hover → shelf info area ───
-    const shelfInfoArea = document.getElementById('shelf-info-area');
-    document.querySelectorAll('.book-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const was = item.classList.contains('active');
-        document.querySelectorAll('.book-item').forEach(b => b.classList.remove('active'));
-        if (!was) {
-          item.classList.add('active');
-          shelfInfoArea.innerHTML = `
-            <div class="book-info-active visible">
-              <div class="book-title">${item.dataset.title}</div>
-              <div class="book-author">${item.dataset.author}</div>
-              ${item.dataset.note ? `<div class="item-note">${item.dataset.note}</div>` : ''}
+      card.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const wasActive = card.classList.contains('active');
+        cards.forEach(c => c.classList.remove('active'));
+
+        if (!wasActive) {
+          card.classList.add('active');
+          card.style.transform = `rotate(0deg) translateY(-4px)`;
+          const metaText = card.dataset.director
+            ? `${card.dataset.director} · ${card.dataset.year}`
+            : `${card.dataset.year}`;
+          infoArea.innerHTML = `
+            <div class="poster-info-active visible">
+              <div class="poster-title">${card.dataset.title}</div>
+              <div class="poster-meta">${metaText}</div>
+              ${card.dataset.note ? `<div class="item-note">${card.dataset.note}</div>` : ''}
             </div>
           `;
         } else {
-          shelfInfoArea.innerHTML = `<div class="shelf-hint">Click a book to see more</div>`;
+          card.style.transform = `rotate(${rot}deg)`;
+          infoArea.innerHTML = `<div class="poster-hint">${hintText}</div>`;
         }
       });
-      item.addEventListener('mouseenter', () => {
-        if (!document.querySelector('.book-item.active')) {
-          shelfInfoArea.innerHTML = `
-            <div class="book-info-active visible">
-              <div class="book-title">${item.dataset.title}</div>
-              <div class="book-author">${item.dataset.author}</div>
+
+      card.addEventListener('mouseenter', () => {
+        if (!panel.querySelector('.poster-card.active')) {
+          card.style.transform = `rotate(0deg) translateY(-4px)`;
+          const metaText = card.dataset.director
+            ? `${card.dataset.director} · ${card.dataset.year}`
+            : `${card.dataset.year}`;
+          infoArea.innerHTML = `
+            <div class="poster-info-active visible">
+              <div class="poster-title">${card.dataset.title}</div>
+              <div class="poster-meta">${metaText}</div>
             </div>
           `;
         }
       });
-      item.addEventListener('mouseleave', () => {
-        if (!document.querySelector('.book-item.active')) {
-          shelfInfoArea.innerHTML = `<div class="shelf-hint">Click a book to see more</div>`;
+
+      card.addEventListener('mouseleave', () => {
+        if (!card.classList.contains('active')) {
+          card.style.transform = `rotate(${rot}deg)`;
+        }
+        if (!panel.querySelector('.poster-card.active')) {
+          infoArea.innerHTML = `<div class="poster-hint">${hintText}</div>`;
         }
       });
     });
-  </script>
+  }
 
-</body>
-</html>
+  setupPosterInfo('panel-movies', 'movie-info-area', 'Click a movie to see more');
+  setupPosterInfo('panel-shows', 'show-info-area', 'Click a show to see more');
+
+  // ─── Bookshelf Info Area ───
+  const shelfInfoArea = document.getElementById('shelf-info-area');
+  document.querySelectorAll('.book-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const was = item.classList.contains('active');
+      document.querySelectorAll('.book-item').forEach(b => b.classList.remove('active'));
+      if (!was) {
+        item.classList.add('active');
+        shelfInfoArea.innerHTML = `
+          <div class="book-info-active visible">
+            <div class="book-title">${item.dataset.title}</div>
+            <div class="book-author">${item.dataset.author}</div>
+            ${item.dataset.note ? `<div class="item-note">${item.dataset.note}</div>` : ''}
+          </div>
+        `;
+      } else {
+        shelfInfoArea.innerHTML = `<div class="shelf-hint">Click a book to see more</div>`;
+      }
+    });
+    item.addEventListener('mouseenter', () => {
+      if (!document.querySelector('.book-item.active')) {
+        shelfInfoArea.innerHTML = `
+          <div class="book-info-active visible">
+            <div class="book-title">${item.dataset.title}</div>
+            <div class="book-author">${item.dataset.author}</div>
+          </div>
+        `;
+      }
+    });
+    item.addEventListener('mouseleave', () => {
+      if (!document.querySelector('.book-item.active')) {
+        shelfInfoArea.innerHTML = `<div class="shelf-hint">Click a book to see more</div>`;
+      }
+    });
+  });
+
+
+</script>
+{{ end }}

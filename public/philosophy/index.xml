@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Julius Broomfield</title>
-    <link>https://juliusbroomfield.com/</link>
-    <description>Recent content on Julius Broomfield</description>
+    <title>Philosophy on Julius Broomfield</title>
+    <link>https://juliusbroomfield.com/philosophy/</link>
+    <description>Recent content in Philosophy on Julius Broomfield</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://juliusbroomfield.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://juliusbroomfield.com/philosophy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Future Essay Title</title>
       <link>https://juliusbroomfield.com/philosophy/future-essay-example/</link>
@@ -14,36 +14,6 @@
       
       <guid>https://juliusbroomfield.com/philosophy/future-essay-example/</guid>
       <description>This writing is currently under construction.</description>
-    </item>
-    
-    <item>
-      <title>Future Project Title</title>
-      <link>https://juliusbroomfield.com/projects/future-project-example/</link>
-      <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://juliusbroomfield.com/projects/future-project-example/</guid>
-      <description>This project is currently in progress. The description above is displayed on the main page.</description>
-    </item>
-    
-    <item>
-      <title>Agentic Evaluation Framework</title>
-      <link>https://juliusbroomfield.com/projects/agentic-evaluation-framework/</link>
-      <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://juliusbroomfield.com/projects/agentic-evaluation-framework/</guid>
-      <description>Evaluating Large Language Models (LLMs) on static, multiple-choice benchmarks is no longer sufficient to gauge their capability in real-world applications. This project introduces a robust, extensible framework for orchestrating and evaluating agentic behavior in interactive, multi-step environments.
-Key Capabilities Multi-step environments: Simulate bash terminals, web browsers, and file structures. State-based tracking: Track environment state mutations rather than just text generation output. Safety validation: Enforce run-time safety policies and catch malicious commands before execution.</description>
-    </item>
-    
-    <item>
-      <title>Pluralistic Alignment Benchmark</title>
-      <link>https://juliusbroomfield.com/projects/pluralistic-alignment-benchmark/</link>
-      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://juliusbroomfield.com/projects/pluralistic-alignment-benchmark/</guid>
-      <description>Modern reinforcement learning from human feedback (RLHF) constructs a singular utility function representing a &amp;ldquo;consensus&amp;rdquo; human. However, humans hold deeply diverse and sometimes contradictory moral and cultural viewpoints. This benchmark measures an LLM&amp;rsquo;s capacity to adjust its perspective dynamically based on target value specifications without forgetting base alignment guardrails.
-Alignment Dimensions We test models on their ability to switch policies along three axes:
-Directness vs. Diplomatic Nuance: Does the model answer questions bluntly or does it carefully frame answers to avoid offending sensitive readers?</description>
     </item>
     
     <item>
@@ -75,15 +45,6 @@ When we evaluate computational systems (such as GANs, Transformers, or diffusion
       <description>In The World as Will and Representation, Arthur Schopenhauer describes the &amp;ldquo;Will&amp;rdquo; as an aimless, insatiable force that drives all of existence. Because we are expressions of this Will, we are trapped in a cycle of wanting, briefly satisfying a desire, feeling boredom, and desiring again. For Schopenhauer, life is a pendulum swinging between pain and boredom.
 He offered only a few escapes:
 Aesthetic Contemplation: Looking at art, particularly music, where we perceive the &amp;ldquo;pure Ideas&amp;rdquo; of the world and forget our individual desires.</description>
-    </item>
-    
-    <item>
-      <title>Personal</title>
-      <link>https://juliusbroomfield.com/personal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://juliusbroomfield.com/personal/</guid>
-      <description></description>
     </item>
     
   </channel>

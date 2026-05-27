@@ -2,10 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://juliusbroomfield.com/philosophy/future-essay-example/</loc>
+    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://juliusbroomfield.com/projects/future-project-example/</loc>
+    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://juliusbroomfield.com/</loc>
+    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juliusbroomfield.com/philosophy/</loc>
+    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juliusbroomfield.com/projects/</loc>
+    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juliusbroomfield.com/projects/agentic-evaluation-framework/</loc>
+    <lastmod>2026-05-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juliusbroomfield.com/projects/pluralistic-alignment-benchmark/</loc>
+    <lastmod>2026-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juliusbroomfield.com/philosophy/hermeneutics-and-hyperreality/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juliusbroomfield.com/philosophy/computational-human-creativity/</loc>
+    <lastmod>2026-02-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juliusbroomfield.com/philosophy/memories-schopenhauer-will/</loc>
+    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juliusbroomfield.com/categories/</loc>
+  </url><url>
+    <loc>https://juliusbroomfield.com/personal/</loc>
+  </url><url>
+    <loc>https://juliusbroomfield.com/tags/</loc>
   </url>
 </urlset>
