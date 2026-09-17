@@ -35,7 +35,7 @@
           {{ else }}
           <span class="pub-title">{{ .title }}</span>
           {{ end }}
-          <div class="pub-authors">{{ .authors }}</div>
+          <div class="pub-authors">{{ .authors | replaceRE "(Broomfield J\\.\\*?)" "<strong>$1</strong>" | safeHTML }}</div>
           <div class="pub-venue">{{ .venue }}</div>
         </li>
         {{ end }}

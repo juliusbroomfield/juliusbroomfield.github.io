@@ -221,6 +221,10 @@ a.pub-title:hover {
   margin-bottom: 3px;
 }
 
+.pub-authors strong {
+  font-weight: 600;
+}
+
 .pub-venue {
   font-size: 0.82rem;
   color: var(--accent);
