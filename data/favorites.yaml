@@ -67,10 +67,10 @@ movies:
     year: "1999"
     poster: "https://a.ltrbxd.com/resized/film-poster/5/1/7/2/8/51728-magnolia-0-230-0-345-crop.jpg?v=178b5e5c17"
 
-  - title: "In the Mood for Love"
-    director: "Wong Kar-wai"
-    year: "2000"
-    poster: "https://upload.wikimedia.org/wikipedia/en/4/45/In_the_Mood_for_Love_movie.jpg"
+  - title: "Spider-Man: Into the Spider-Verse"
+    director: "Persichetti, Ramsey & Rothman"
+    year: "2018"
+    poster: "https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@._V1_SX500.jpg"
 
   - title: "Dave Chappelle's Block Party"
     director: "Michel Gondry"
@@ -112,7 +112,7 @@ shows:
 
   - title: "The Wire"
     year: "2002"
-    poster: "https://masterimages.moviepostershop.com/the-wire-movie-poster-2002-1010205231.jpg"
+    poster: "https://m.media-amazon.com/images/M/MV5BYjIxZTMwZmUtOTUzYS00YmU2LWJhNDAtNzA2NDg0NDA0MjVkXkEyXkFqcGc@._V1_SX500.jpg"
 
   - title: "Fleabag"
     year: "2016"
@@ -126,9 +126,9 @@ shows:
     year: "2022"
     poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSshQjcMlLb9llN_Mg_D7fS1OZq9bCCB3ty1A&s"
 
-  - title: "Succession"
-    year: "2018"
-    poster: "https://m.media-amazon.com/images/M/MV5BYTY4YTVkY2QtMjRmOS00YzliLWIxOWQtMTdkOTVkN2UzODNmXkEyXkFqcGc@._V1_.jpg"
+  - title: "Attack on Titan"
+    year: "2013"
+    poster: "https://m.media-amazon.com/images/M/MV5BZjliODY5MzQtMmViZC00MTZmLWFhMWMtMjMwM2I3OGY1MTRiXkEyXkFqcGc@._V1_SX500.jpg"
 
   - title: "Barry"
     year: "2018"
